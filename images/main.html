@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faculty Directory Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+</head>
+
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+    <div class="w3-bar w3-black w3-wide w3-padding w3-card" style="z-index: 1">
+        <!--Navigation bar buttons-->
+        <a href="main.html" class="w3-bar-item w3-button"><b>Faculty</b> Directory</a>
+        <!-- Float links to the right. Hide them on small screens -->
+        <div class="w3-right w3-hide-small">
+            <a href="Events.html" class="w3-bar-item w3-button">Events</a>
+            <a href="SignIn.html" class="w3-bar-item w3-button">Sign in</a>
+        </div>
+    </div>
+    <div class="w3-display-container w3-content w3-wide" style="max-width:1500px;max-height: 100px; z-index: -1;" id="home">
+<!--        A&T image on background-->
+        <img class="w3-image, imgScreenSave" src="./images/ncat.png"width="1800">
+        <div class="w3-display-left w3-margin-top w3-center" style="transform: translateY(100px)">
+           <!--Faculty Directory button on middle of screen.-->
+            <h1 class="w3-xxlarge w3-text-white"
+                style="cursor: pointer; border-style: solid; border-color: black"
+                onmouseover="eraseBorder(this)"
+                onmouseout="border(this)"
+                onclick="clickFacultyDirectory()">
+                <span class="w3-padding w3-black w3-opacity-min"><b style="font-size: 31px">Faculty</b></span><span class="w3-hide-small w3-text-black"> Directory</span></h1>
+        </div>
+        <!--Department Events button on middle of screen-->
+        <div class="w3-display-right w3-margin-top w3-center" style="transform: translateY(100px)">
+            <h1 class="w3-xxlarge w3-text-white"
+                style="cursor: pointer; border-style: solid; border-color: black"
+                onmouseover="eraseBorder(this)"
+                onmouseout="border(this)"
+                onclick="clickEvents()">
+                <span class="w3-padding w3-black w3-opacity-min"><b style="font-size: 31px">Department</b></span><span class="w3-hide-small w3-text-black"> Events</span></h1>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
