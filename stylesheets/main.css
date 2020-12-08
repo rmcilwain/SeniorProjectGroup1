@@ -13,7 +13,7 @@
 }*/
 /*Background effect*/
 
-.homebody{
+body{
     background-image: radial-gradient(circle at top right, #fdb927, #c2c2c2, #004684);
     transform: translateY(600);
     height: 100vh;
@@ -139,7 +139,7 @@ body {
     height: 100vh;
     width:100vw;
 }
-.container {
+.container/*, .buttonContainer*/{
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -152,7 +152,7 @@ body {
     letter-spacing: 0.1rem;
     text-align: center;
     overflow: hidden;
-    transform: translateY(-40px);
+    transform: translateY(-60px);
 }
 .container p span.typed-text {
     font-weight: normal;
@@ -178,7 +178,7 @@ body {
 
 /*Buttons*/
 .button {
-    position: absolute;
+    position: fixed;
     padding: 15px 25px;
     height: 89px;
     font-size: 20px;
@@ -188,10 +188,9 @@ body {
     color: black;
     background-color: #E8E8E8;
     border: none;
-    /*border-radius: 15px;
-    box-shadow: 0 9px #070707;*/
-    transform: translateY(550px) translateX(705px);
-    /*transform: translateY(550px) translateX(900px);*/
+    transform: translateY(600px) translateX(705px);
+   /* transform: translateX(380px);*/
+    /*transform: translateY(400px) translateX(380px);*/
     width: 150px;
     border-radius: 10px;
 
@@ -207,26 +206,46 @@ body {
     transition: box-shadow .1s ease-in-out;
 }
 
-.button:hover {background-color: #E8E8E8
+.button:hover {
+    background-color: #E8E8E8
 }
 
+/**********FIX BUTTON PLACEMENT WHEN ZOOMING******************/
 .button:active {
     box-shadow: none;
-    transform: translateY(554px) translateX(705px);
+    transform: translateY(604px) translateX(705px);
+   /* transform: translateY(404px) translateX(380px);*/
 }
 
 .button2{
-    transform: translateY(550px) translateX(985px);
+    transform: translateY(600px) translateX(985px);
+    /*transform: translateX(800px);*/
+    /*transform: translateY(400px) translateX(795px);*/
 }
 .button2:active{
-    transform: translateY(554px) translateX(985px);
+    transform: translateY(604px) translateX(985px);
+    /*transform: translateY(400px) translateX(795px);*/
 }
 
-.anchor{
-    position: relative;
-    min-height: 36px;
+/*.anchor{
+    !*min-height: 36px;
+    height: 10vh;
     margin: 0 auto;
 
-    min-width: 960px;
+    min-width: 10px;!*960px;*!*!
+  !*  height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;*!
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}*/
+.buttonContainer{
+   /* height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;*/
+    transform: translateY(-40px);
 }
 

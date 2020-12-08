@@ -44,12 +44,14 @@ document.addEventListener("DOMContentLoaded", function() { // On DOM Load initia
 
 
 
+
+
 function clickFacultyDirectory(){
-    window.location.href = 'FacultyDirectory.html';
+    window.location.href = 'FacultyDirectory.php';
 }
 
 function clickEvents() {
-    window.location.href = 'Events.html';
+    window.location.href = 'Events.php';
 }
 
 

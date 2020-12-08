@@ -1,94 +1,449 @@
-* {box-sizing:border-box}
+html{
+    scroll-behavior: smooth;
+    overflow-y: visible;
 
-/* Slideshow container */
-.slideshow-container {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
+}
+body{
+    background-color: #fdb927;
 }
 
-/* Hide the images by default */
-.mySlides {
-    display: none;
+/*Calendar*/
+.container {
+    margin: 100px auto;
+    width: 809px;
+    float: left;
+    top: 0;
+    height: 100vh;
 }
-
-/* Next & previous buttons */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
+.light {
+    background-color: #fff;
 }
-
-/* Position the "next button" to the right */
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+.calendar {
+    width: 370px;
+    box-shadow: 0px 0px 35px -16px rgba(0, 0, 0, 0.75);
+    font-family: 'Roboto', sans-serif;
+    padding: 20px 30px;
+    color: #363b41;
+    display: inline-block;
+    transform: translateY(-100px);
+    height: 100vh;
+    z-index: -1;
+    position: fixed;
 }
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
+.calendar_header {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.08);
 }
-
-/* Caption text */
-.text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
+.header_copy {
+    color: #a39d9e;
+    font-size: 20px;
+}
+.calendar_plan {
+    margin: 20px 0 40px;
+}
+.cl_plan {
     width: 100%;
-    text-align: center;
+    height: 140px;
+    background-image: linear-gradient(-222deg, #fdb927, #ffe045);
+    box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
+    padding: 30px;
+    color: #fff;
+}
+.cl_copy {
+    font-size: 20px;
+    margin: 20px 0;
+    display: inline-block;
+}
+.cl_arrow {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    margin: 0 0 0 30px;
+    color: #c285b8;
+    padding: 11px 13px;
+    position: absolute;
+}
+.cl_arrow:hover{
+    background-color: #d6d6d6;
+}
+.arrow {
+    border: solid #a39d9e;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+.calendar_events {
+    color: #a39d9e;
+}
+.ce_title {
+    font-size: 14px;
+}
+.event_item {
+    margin: 18px 0;
+    padding: 5px;
+    cursor: pointer;
+}
+.event_item:hover {
+    background-image: linear-gradient(-222deg, #ff8494, #ffa9b7);
+    box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
+}
+.event_item:hover .ei_Dot {
+    background-color: #fff;
+}
+.event_item:hover .ei_Copy, .event_item:hover .ei_Title {
+    color: #fff;
+}
+.ei_Dot, .ei_Title {
+    display: inline-block;
+}
+.ei_Dot {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #a39d9e;
+    box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
+}
+.dot_active {
+    background-color: #fdb927;
+}
+.ei_Title {
+    margin-left: 10px;
+    color: #363b41;
+}
+.ei_Copy {
+    font-size: 12px;
+    margin-left: 27px;
 }
 
-/* Number text (1/3 etc) */
-.numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
+
+
+
+/*Events slide show*/
+.wrapper {
+    position: relative;
+    height: 65vh;
+    width: 100vw;
+    overflow: hidden;
+    transform: translateX(300px) translateY(-100px);
+    z-index: -2;
+}
+.slideshow {
     position: absolute;
     top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-50%);
+}
+.slideshow--hero {
+    z-index: 3;
+    left: 0;
+    top: 50%;
+    height: 85%;
+    transform: translateY(-50%) skewY(-10deg);
+    transform-origin: center;
+    overflow: hidden;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+}
+.slideshow--hero .slides {
+    position: absolute;
+    left: 0;
+    top: -10%;
+    width: 100vw;
+    height: 100vh;
+    animation: 11s slideshow-hero-mobile -3s infinite;
+}
+.slideshow--hero .slide1 {
+    background-image: url(../images/temp1.jpg);
+    animation: 20s slides-set-1 -0.1s infinite;
+}
+.slideshow--hero .slide2 {
+    background-image: url(../images/temp2.jpg);
+    animation: 20s slides-set-2 -0.1s infinite;
+}
+.slideshow--hero .slide3 {
+    background-image: url(../images/temp3.jpg);
+    animation: 20s slides-set-3 -0.1s infinite;
+}
+@media (min-width: 600px) {
+    .slideshow--hero {
+        left: 50%;
+        top: 0;
+        width: 67%;
+        height: 100%;
+        transform: translateX(-50%) skewX(-10deg);
+    }
+    .slideshow--hero .slides {
+        top: 0;
+        left: -25%;
+        height: 100%;
+        animation: 11s slideshow-hero -3s infinite;
+    }
+}
+.slideshow--contrast {
+    z-index: 1;
+    width: 100%;
+    height: 50%;
+    transform: none;
+}
+.slideshow--contrast--before {
+    left: 0;
+}
+.slideshow--contrast--before .slides {
+    width: 100vw;
+}
+.slideshow--contrast--after {
+    z-index: 2;
+    left: auto;
+    right: 0;
+}
+.slideshow--contrast--after .slides {
+    width: 100vw;
+    left: auto;
+    right: 0;
+}
+.slideshow--contrast .slides {
+    animation: 14s slideshow-contrast -5s infinite;
+}
+.slideshow--contrast .slide1 {
+    background-image: linear-gradient(to bottom, rgba(200, 200, 75, 0.25) 0, rgba(200, 75, 75, 0.5) 100%), url(../images/temp1.jpg);
+    animation: 20s slides-set-1 -0.2s infinite;
+}
+.slideshow--contrast .slide2 {
+    background-image: linear-gradient(to bottom, rgba(200, 200, 75, 0.25) 0, rgba(200, 75, 75, 0.5) 100%), url(../images/temp2.jpg);
+    animation: 20s slides-set-2 -0.2s infinite;
+}
+.slideshow--contrast .slide3 {
+    background-image: linear-gradient(to bottom, rgba(200, 200, 75, 0.25) 0, rgba(200, 75, 75, 0.5) 100%), url(../images/temp3.jpg);
+    animation: 20s slides-set-3 -0.2s infinite;
+}
+.slideshow--contrast--after {
+    top: auto;
+    bottom: 0;
+}
+.slideshow--contrast--after .slides {
+    animation: 13s slideshow-contrast -13s infinite;
+}
+.slideshow--contrast--after .slide {
+    background-position: right;
+}
+.slideshow--contrast--after .slide1 {
+    animation: 20s slides-set-1 infinite;
+}
+.slideshow--contrast--after .slide2 {
+    animation: 20s slides-set-2 infinite;
+}
+.slideshow--contrast--after .slide3 {
+    animation: 20s slides-set-3 infinite;
+}
+@media (min-width: 600px) {
+    .slideshow--contrast {
+        width: 50%;
+        height: 100%;
+    }
+    .slideshow--contrast--after {
+        top: 0;
+        bottom: auto;
+    }
+    .slideshow--contrast--after .slides {
+        width: 50vw;
+    }
+}
+.slides, .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+@keyframes slideshow-hero-mobile {
+    0% {
+        transform: scale(1) skewY(10deg);
+    }
+    50% {
+        transform: scale(1.05) skewY(10deg);
+    }
+    100% {
+        transform: scale(1) skewY(10deg);
+    }
+}
+@keyframes slideshow-hero {
+    0% {
+        transform: scale(1) skewX(10deg);
+    }
+    50% {
+        transform: scale(1.05) skewX(10deg);
+    }
+    100% {
+        transform: scale(1) skewX(10deg);
+    }
+}
+@keyframes slideshow-contrast {
+    0% {
+        transform: scale(1.05);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+@keyframes slides-set-1 {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    31% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    34% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    97% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes slides-set-2 {
+    0% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    31% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    34% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    64% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    67% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+}
+@keyframes slides-set-3 {
+    0% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    64% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    67% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    97% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
 }
 
-/* The dots/bullets/indicators */
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
+
+
+
+/*More Button*/
+.center-con {
+    position:fixed;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    float: bottom;
+    transform: translateY(250px) translateX(70em);
 }
 
-.active, .dot:hover {
-    background-color: #717171;
+.round {
+    position: relative;
+    border: 3px solid #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
 }
 
-/* Fading animation */
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
+span {
+    z-index: 999;
+    height: 3px;
+    margin:1px;
+    width: 30px;
+    background: #fff;
+    transition: 0.4s ease;
 }
 
-@-webkit-keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
+span:first-child {
+    display: block;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 25%;
+    bottom: 35%;
 }
 
-@keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
+span:nth-child(2) {
+    display: block;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: 45%;
+    bottom: 35%;
+}
+
+span:nth-child(3) {
+    display: block;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 25%;
+    bottom: 54%;
+}
+
+span:nth-child(4) {
+    display: block;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: 45%;
+    bottom: 54%;
+}
+
+.round:hover span:nth-child(1) {
+    transform: rotate(-135deg);
+}
+
+.round:hover span:nth-child(2) {
+    transform: rotate(135deg);
+}
+
+.round:hover span:nth-child(3) {
+    transform: rotate(225deg);
+}
+
+.round:hover span:nth-child(4) {
+    transform: rotate(-225deg);
 }
