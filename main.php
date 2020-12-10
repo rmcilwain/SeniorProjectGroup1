@@ -30,6 +30,7 @@ session_start();
                 echo ' <!--If a user is logged in -->
                 <div class="w3-right w3-hide-small">
                 <span class="w3-bar-item ">Hi '.$fname.'! </span>
+                <a href="FacultyDirectory.php" class="w3-bar-item w3-button">Directory</a>
                 <a href="Events.php" class="w3-bar-item w3-button">Events</a>
                 <a href="./includes/logout.php" class="w3-bar-item w3-button"><b>Logout</b></a>
                 </div>
@@ -37,6 +38,7 @@ session_start();
             }else{/*If a user is not logged in */
                 echo '
                 <div class="w3-right w3-hide-small">
+                <a href="FacultyDirectory.php" class="w3-bar-item w3-button">Directory</a>
                 <a href="Events.php" class="w3-bar-item w3-button">Events</a>
                 <a href="SignIn.php" class="w3-bar-item w3-button">Sign in</a>
                 </div>

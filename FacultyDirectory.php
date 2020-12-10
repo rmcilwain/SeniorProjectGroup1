@@ -26,6 +26,7 @@ session_start();
                 echo '
                 <div class="w3-right w3-hide-small">
                 <span href="#" class="w3-bar-item ">Hi '.$fname.'! </span>
+                <a href="FacultyDirectory.php" class="w3-bar-item w3-button"><b>Directory</b></a>
                 <a href="Events.php" class="w3-bar-item w3-button">Events</a>
                 <a href="./includes/logout.php" class="w3-bar-item w3-button">Logout</a>
                 </div>
@@ -33,6 +34,7 @@ session_start();
             }else{ /*Else display the navigation bar as if they are not logged in.*/
                 echo '
                 <div class="w3-right w3-hide-small">
+                <a href="FacultyDirectory.php" class="w3-bar-item w3-button"><b>Directory</b></a>
                 <a href="Events.php" class="w3-bar-item w3-button">Events</a>
                 <a href="SignIn.php" class="w3-bar-item w3-button">Sign in</a>
                 </div>
