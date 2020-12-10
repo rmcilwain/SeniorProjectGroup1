@@ -8,6 +8,7 @@
     }
 }
 
+/*forms */
 .openButton {
     border: none;
     border-radius: 5px;
@@ -23,19 +24,18 @@
     width: 100%;
 }
 .formPopup {
-    /*padding-right: 100px;*/
-    width: 100%/*550px*/;
+    width: 100%;
     background-color: beige;
     display: none;
     position: fixed;
-    left: 50%;/*45%;*/
+    left: 50%;
     top: 5%;
     transform: translate(-50%, 5%);
     border: 3px solid #999999;
     z-index: 9;
 }
 .formContainer {
-    max-width: 40%;/*280px;*//*300px;*/
+    max-width: 40%;
     padding: 20px;
     background-color: #fff;
 }

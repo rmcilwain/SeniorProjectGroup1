@@ -1,3 +1,4 @@
+<!--start the session to hold any data that the user puts in using their logged in account.-->
 <?php
 session_start();
 ?>
@@ -21,21 +22,21 @@ session_start();
         <a href="main.php" class="w3-bar-item w3-button"><b>Home</b></a>
         <!-- Float links to the right. Hide them on small screens -->
         <div class="w3-right w3-hide-small">
+            <!--Gain the users name to display through the session and put different views based on if
+            they are logged in or not.-->
             <?php
             if(isset($_SESSION['id-s'])){
                 $fname = $_SESSION['firstname-s'];
-                echo '
+                echo ' <!--If a user is logged in -->
                 <div class="w3-right w3-hide-small">
                 <span class="w3-bar-item ">Hi '.$fname.'! </span>
-                <a href="FacultyDirectory.php" class="w3-bar-item w3-button">Directory</a>
                 <a href="Events.php" class="w3-bar-item w3-button">Events</a>
                 <a href="./includes/logout.php" class="w3-bar-item w3-button"><b>Logout</b></a>
                 </div>
             ';
-            }else{
+            }else{/*If a user is not logged in */
                 echo '
                 <div class="w3-right w3-hide-small">
-                <a href="FacultyDirectory.php" class="w3-bar-item w3-button">Directory</a>
                 <a href="Events.php" class="w3-bar-item w3-button">Events</a>
                 <a href="SignIn.php" class="w3-bar-item w3-button">Sign in</a>
                 </div>
@@ -44,6 +45,7 @@ session_start();
             ?>
         </div>
     </div>
+    <!--Container to hold the main components on home screen.-->
     <div class="w3-display-container w3-content w3-wide" style="max-width:8000px; z-index: -1;">
 <!--        Buttons-->
 
@@ -52,11 +54,12 @@ session_start();
                 <button type="button" class="button" onclick="clickFacultyDirectory()"> <b>Faculty Directory</b> </button>
                 <button type="button" class="button button2" onclick="clickEvents()"> <b>Events</b> </button>
             </div>
-            <div class="container">
+            <div class="container"><!--Show the typed text-->
                 <p>Find <span class="typed-text" style="z-index: -1;"></span><span class="cursor">&nbsp;</span></p>
             </div>
         </div>
 
+       <!-- Moving circles in the background, having issues displaying when the typed text is working.-->
         <div class="area" >
             <ul class="circles" style="z-index: -1;">
                 <li></li>

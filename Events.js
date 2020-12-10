@@ -1,3 +1,5 @@
+/*Slideshow*/
+
 // Master DOManipulator v2 ------------------------------------------------------------
 const items = document.querySelectorAll('.item'),
     controls = document.querySelectorAll('.control'),
@@ -80,5 +82,3 @@ slider.init();
 //Add Event:
 
 
-
-// More Button

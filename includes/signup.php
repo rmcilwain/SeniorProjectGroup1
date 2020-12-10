@@ -2,6 +2,7 @@
 if(isset($_POST['signup-button'])){
     require 'config.php';
 
+    /*Get fields from the form*/
     $firstname = $_POST["firstname"];
     $lastname = $_POST["lastname"];
     $aggieid = $_POST["aggieid"];
@@ -9,8 +10,8 @@ if(isset($_POST['signup-button'])){
     $password = $_POST["password"];
     $passwordRepeat = $_POST["passwordRepeat"];
 
-    $pattern1 = "/@ncat.edu$/";//"/ncat.edu/i";
-    $pattern2 = "/@aggies.ncat.edu$/";//"/aggies.ncat.edu/i";
+    $pattern1 = "/@ncat.edu$/";
+    $pattern2 = "/@aggies.ncat.edu$/";
 
     $typesp = "";
     if(preg_match($pattern1, $email)){
@@ -44,7 +45,7 @@ if(isset($_POST['signup-button'])){
     }elseif($password !== $passwordRepeat){
         header("Location: ../SignIn.php?error=passwordnomatch&firstname=".$firstname."&lastname=".$lastname."&aggieid=".$aggieid."&email=".$email);
         exit();
-    }else{//unique username/aggieid?
+    }else{
         //change depending on the email. so students, professors...
 
         $sql = "SELECT AggieID FROM student WHERE email=?";

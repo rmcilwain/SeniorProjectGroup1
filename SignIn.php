@@ -1,3 +1,4 @@
+<!--Start the session for signed in data.-->
 <?php
 session_start();
 ?>
@@ -27,6 +28,7 @@ session_start();
         </div>
     </div>
 
+    <!--Container for the sign in form.-->
     <div class="w3-display-container w3-content w3-wide" style="max-width:8000px; z-index: -1;">
         <div class="container" id="container">
             <div class="alert alert-success alert-dismissible" id="success" style="display:none;">
@@ -35,8 +37,9 @@ session_start();
             <div class="alert alert-danger alert-dismissible" id="error" style="display:none;">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
             </div>
+
             <div class="form-container sign-up-container">
-                <?php
+                <?php /*Display error messages if any errors are found.*/
                 if(isset($_GET['error'])){
                     if($_GET['error'] == "emptyfields"){
                         echo '<p class="signuperror" style="text-align: center; transform:translateY(30px)">Fill in all fields!</p>';
@@ -61,6 +64,7 @@ session_start();
                     echo '<p class="signupsuccess" style="text-align: center; transform:translateY(30px)">Signup successful!</p>';
                 }*/
             ?>
+                <!--The actual sign up form-->
                 <form action="includes/signup.php" method="POST" id="sign-up">
                     <h1>Create Account</h1>
                     <input type="text" name="firstname" id="firstname" placeholder="First Name" /><br>
@@ -72,8 +76,9 @@ session_start();
                     <button type="submit" name="signup-button" id="signup-button" onclick="" style="color:white">Sign Up</button>
                 </form>
             </div>
+            <!--Container for the sign in form-->
             <div class="form-container sign-in-container">
-
+                <!--The actual sign in form-->
                 <form action="includes/login.php" method="POST" id="login">
                     <h1>Sign in</h1>
                     <input type="text" name="aggieid-signIn" placeholder="Email" />
@@ -81,10 +86,13 @@ session_start();
                     <a href="#">Forgot your password?</a>
                     <button type="submit" name="login-button" id="login-button" style="color: white">Sign In</button>
                 </form>
+               <!-- A button to log out-->
                 <form action="includes/logout.php" method="POST" id="logout">
                     <button type="submit" name="logout-button" id="logout-button" style="color: white">Logout</button>
                 </form>
             </div>
+            <!--Containers for the overlay sections that act as transitions between
+            the sign in and sign up sections.-->
             <div class="overlay-container">
                 <div class="overlay">
                     <div class="overlay-panel overlay-left">
@@ -101,6 +109,8 @@ session_start();
         </div>
 
     </div>
+    <!--Displaying a you are logged in and logged out message on the bottom left
+    when session is logged in and out.-->
     <?php
         if(isset($_SESSION['id-s'])){
             echo '<p class="fade-out" style="font-size: 20px"><b>You are logged in!</b></p>';

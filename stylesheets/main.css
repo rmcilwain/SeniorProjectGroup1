@@ -1,16 +1,6 @@
 @import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
-
-/*!*A&T image on background style*!
-.imgScreenSave{
-    max-width:99%;
-    height:300px;
-    max-height:60%;
-    transform: translateY(60px);
-    image-rendering: -webkit-crisp-edges;
-
-}*/
 /*Background effect*/
 
 body{
@@ -18,6 +8,7 @@ body{
     transform: translateY(600);
 }
 
+/*Background circles*/
 .area{
     width: 100%;
     height:100vh;
@@ -188,8 +179,6 @@ body {
     background-color: #E8E8E8;
     border: none;
     transform: translateY(600px) translateX(705px);
-   /* transform: translateX(380px);*/
-    /*transform: translateY(400px) translateX(380px);*/
     width: 150px;
     border-radius: 10px;
 
@@ -213,38 +202,16 @@ body {
 .button:active {
     box-shadow: none;
     transform: translateY(604px) translateX(705px);
-   /* transform: translateY(404px) translateX(380px);*/
 }
 
 .button2{
     transform: translateY(600px) translateX(985px);
-    /*transform: translateX(800px);*/
-    /*transform: translateY(400px) translateX(795px);*/
 }
 .button2:active{
     transform: translateY(604px) translateX(985px);
-    /*transform: translateY(400px) translateX(795px);*/
 }
 
-/*.anchor{
-    !*min-height: 36px;
-    height: 10vh;
-    margin: 0 auto;
-
-    min-width: 10px;!*960px;*!*!
-  !*  height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;*!
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-}*/
 .buttonContainer{
-   /* height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;*/
     transform: translateY(-40px);
 }
 

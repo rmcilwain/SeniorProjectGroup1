@@ -1,3 +1,4 @@
+/*To display the typing text*/
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 console.log(typedTextSpan);
@@ -43,46 +44,14 @@ document.addEventListener("DOMContentLoaded", function() { // On DOM Load initia
 });
 
 
-
-
-
+/*Locate to the faculty directory page when that button is clicked.*/
 function clickFacultyDirectory(){
     window.location.href = 'FacultyDirectory.php';
 }
 
+/*Locate to the events page when that button is clicked.*/
 function clickEvents() {
     window.location.href = 'Events.php';
 }
 
 
-/*
-var selectric = document.querySelector('.selectric'),
-    words = ['Pikachu', 'Charmander', 'Squirtle', 'Bulbasaur', 'Pikachu'];
-var letterIndex = 0,
-    wordIndex = 0;
-
-initTyping();
-
-function initTyping() {
-    if (wordIndex < words.length) {
-        window.setTimeout(function () {
-            selectric.innerHTML = '';
-            letterIndex = 0;
-            printLetters('a ' + words[wordIndex]);
-        }, 2000);
-    }
-}
-
-function printLetters(word) {
-    window.setTimeout(function () {
-        if (letterIndex < word.length) {
-            selectric.innerHTML += word[letterIndex];
-            letterIndex += 1;
-            printLetters(word);
-        } else {
-            wordIndex += 1;
-            initTyping();
-        }
-    }, Math.floor(Math.random() * (250 - 50 + 1) + 50));
-}
-*/

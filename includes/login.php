@@ -3,6 +3,7 @@
 if(isset($_POST['login-button'])) {
     require 'config.php';
 
+    /*Get email and password from forms*/
     $aggieidEmail = $_POST['aggieid-signIn'];
     $password = $_POST['password-signIn'];
 
