@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Master DOManipulator v2 ------------------------------------------------------------
 const items = document.querySelectorAll('.item'),
     controls = document.querySelectorAll('.control'),
@@ -74,21 +73,6 @@ slider.init();
 
 
 
-//Today's Date
-/*function time() {
-    let clock = document.getElementsByClassName('header_title');
-    let date = new Date();
-    let day = date.getDay();
-    let month = date.getMonth();
-    let year = date.getFullYear();
-
-    clock.innerHTML = month + " " + day + " " + year;
-}
-let clock = document.getElementsByClassName('cl_copy');
-console.log(clock)
-//clock.innerText =  "KOKOKO";
-setInterval(time, 1000);*/
-
 
 
 
@@ -98,34 +82,3 @@ setInterval(time, 1000);*/
 
 
 // More Button
-=======
-var slideIndex = 1;
-showSlides(slideIndex);
-currentSlide(1);
-
-// Next/previous controls
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-}
->>>>>>> 8998c9db649cf8733d3dd7f5d0ce57e220b8ff14

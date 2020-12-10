@@ -27,6 +27,7 @@ session_start();
                 echo '
                 <div class="w3-right w3-hide-small">
                 <span class="w3-bar-item ">Hi '.$fname.'! </span>
+                <a href="FacultyDirectory.php" class="w3-bar-item w3-button">Directory</a>
                 <a href="Events.php" class="w3-bar-item w3-button">Events</a>
                 <a href="./includes/logout.php" class="w3-bar-item w3-button"><b>Logout</b></a>
                 </div>
@@ -34,6 +35,7 @@ session_start();
             }else{
                 echo '
                 <div class="w3-right w3-hide-small">
+                <a href="FacultyDirectory.php" class="w3-bar-item w3-button">Directory</a>
                 <a href="Events.php" class="w3-bar-item w3-button">Events</a>
                 <a href="SignIn.php" class="w3-bar-item w3-button">Sign in</a>
                 </div>
@@ -69,29 +71,6 @@ session_start();
                 <li></li>
             </ul>
         </div >
-
-        <!-- Hover #1 -->
-     <!--   <div class="box-1">
-            <div class="btn btn-one"
-                 onclick="clickFacultyDirectory()">
-                <span class="w3-padding w3-black w3-opacity-min"><b>Faculty</b></span><span class="w3-hide-small w3-text-black"> Directory</span></h1>
-            </div>
-        </div>
-
-        &lt;!&ndash; Hover #2 &ndash;&gt;
-        <div class="box-2">
-            <div class="btn btn-two">
-                <span class="w3-padding w3-black w3-opacity-min"><b>Sign In</b></span></h1>
-            </div>
-        </div>
-
-        &lt;!&ndash; Hover #3 &ndash;&gt;
-        <div class="box-3">
-            <div class="btn btn-three"
-                 onclick="clickEvents()">
-                <span class="w3-hide-small w3-text-black"><b>Department  </b></span><span class="w3-padding w3-black w3-opacity-min"> Events</span></h1>
-            </div>
-        </div>-->
 
     </div>
 </div>

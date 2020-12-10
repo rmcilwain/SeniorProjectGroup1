@@ -21,6 +21,7 @@ session_start();
         <a href="main.php" class="w3-bar-item w3-button" style="text-decoration:none">Home</a>
         <!-- Float links to the right. Hide them on small screens -->
         <div class="w3-right w3-hide-small">
+            <a href="FacultyDirectory.php" class="w3-bar-item w3-button" style="text-decoration:none">Directory</a>
             <a href="Events.php" class="w3-bar-item w3-button" style="text-decoration:none">Events</a>
             <a href="SignIn.php" class="w3-bar-item w3-button" style="text-decoration:none"><b>Sign in</b></a>
         </div>

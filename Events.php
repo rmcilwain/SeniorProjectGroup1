@@ -38,9 +38,12 @@ session_start();
 
 <div id="section2" style="height:1000px;background-color:#fdb927;background-image: url(./images/temp1.jpg);font-size:36px">
 
-</div><p> Temporary Event 1 </p>
-<p> 10:30 am </p>
+</div>
+<div>
+<p style="font-size: 70px;background-color: white; border: 5px #999999; transform:translateX(22%)"> Virtual Commencement </p>
+    <p style="font-size: 30px;background-color: white; border: 5px #999999; transform:translateX(22%)"> 10:30 am <br> Further information...</p>
 
+</div>
 <div style="height:1000px;background-color:#fdb927;font-size:36px">
 </div>
 </body>
@@ -58,6 +61,7 @@ session_start();
                 echo '
                 <div class="w3-right w3-hide-small">
                 <a href="#" class="w3-bar-item ">Hi '.$fname.'! </a>
+                <a href="FacultyDirectory.php" class="w3-bar-item w3-button">Directory</a>
                 <a href="Events.php" class="w3-bar-item w3-button"><b>Events</b></a>
                 <a href="./includes/logout.php" class="w3-bar-item w3-button">Logout</a>
                 </div>
@@ -65,6 +69,7 @@ session_start();
             }else{
                 echo '
                 <div class="w3-right w3-hide-small">
+                <a href="FacultyDirectory.php" class="w3-bar-item w3-button">Directory</a>
                 <a href="Events.php" class="w3-bar-item w3-button"><b>Events</b></a>
                 <a href="SignIn.php" class="w3-bar-item w3-button">Sign in</a>
                 </div>
@@ -115,28 +120,23 @@ session_start();
                 <p class="ce_title">Upcoming Events</p>
                 <div class="event_item">
                     <div class="ei_Dot dot_active"></div>
-                    <div class="ei_Title">10:30 am</div>
-                    <div class="ei_Copy">Temp Event 1</div>
-                </div>
-                <div class="event_item">
-                    <div class="ei_Dot"></div>
                     <div class="ei_Title">11:00 am</div>
-                    <div class="ei_Copy">Temp Event 2</div>
+                    <div class="ei_Copy">Thursday Talk</div>
                 </div>
                 <div class="event_item">
-                    <div class="ei_Dot"></div>
+                    <div class="ei_Dot dot_active"></div>
                     <div class="ei_Title">12:00 pm</div>
-                    <div class="ei_Copy">Temp Event 3</div>
+                    <div class="ei_Copy">Virtual Career Fair</div>
                 </div>
                 <div class="event_item">
                     <div class="ei_Dot"></div>
                     <div class="ei_Title">4:30 pm</div>
-                    <div class="ei_Copy">Temp Event 4</div>
+                    <div class="ei_Copy">Virtual Tech Information Day</div>
                 </div>
                 <div class="event_item">
                     <div class="ei_Dot"></div>
                     <div class="ei_Title">5:30 pm</div>
-                    <div class="ei_Copy">Temp Event 5</div>
+                    <div class="ei_Copy">Colloquim</div>
                 </div>
             </div><br>
 
