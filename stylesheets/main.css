@@ -1,3 +1,256 @@
+<<<<<<< HEAD
+@import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+
+/*!*A&T image on background style*!
+.imgScreenSave{
+    max-width:99%;
+    height:300px;
+    max-height:60%;
+    transform: translateY(60px);
+    image-rendering: -webkit-crisp-edges;
+
+}*/
+/*Background effect*/
+
+body{
+    background-image: radial-gradient(circle at top right, #fdb927, #c2c2c2, #004684);
+    transform: translateY(600);
+    height: 100vh;
+}
+
+.area{
+    width: 100%;
+    height:100vh;
+}
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+
+}
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+
+
+
+/*Typewriter effect*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    width:100vw;
+}
+.container/*, .buttonContainer*/{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container p {
+    font-size: 3rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    overflow: hidden;
+    transform: translateY(-60px);
+}
+.container p span.typed-text {
+    font-weight: normal;
+    color: #487ddd;
+}
+.container p span.cursor {
+    display: inline-block;
+    background-color: #ccc;
+    margin-left: 0.1rem;
+    width: 3px;
+    animation: blink 1s infinite;
+}
+.container p span.cursor.typing {
+    animation: none;
+}
+@keyframes blink {
+    0%  { background-color: #ccc; }
+    49% { background-color: #ccc; }
+    50% { background-color: transparent; }
+    99% { background-color: transparent; }
+    100%  { background-color: #ccc; }
+}
+
+/*Buttons*/
+.button {
+    position: fixed;
+    padding: 15px 25px;
+    height: 89px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    outline: #bbbbbb;
+    color: black;
+    background-color: #E8E8E8;
+    border: none;
+    transform: translateY(600px) translateX(705px);
+   /* transform: translateX(380px);*/
+    /*transform: translateY(400px) translateX(380px);*/
+    width: 150px;
+    border-radius: 10px;
+
+    box-shadow:
+            0px 3px rgba(128,128,128,1), /* gradient effects */
+            0px 4px rgba(118,118,118,1),
+            0px 5px rgba(108,108,108,1),
+            0px 6px rgba(98,98,98,1),
+            0px 7px rgba(88,88,88,1),
+            0px 8px rgba(78,78,78,1),
+            0px 14px 6px -1px rgba(128,128,128,1); /* shadow */
+
+    transition: box-shadow .1s ease-in-out;
+}
+
+.button:hover {
+    background-color: #E8E8E8
+}
+
+/**********FIX BUTTON PLACEMENT WHEN ZOOMING******************/
+.button:active {
+    box-shadow: none;
+    transform: translateY(604px) translateX(705px);
+   /* transform: translateY(404px) translateX(380px);*/
+}
+
+.button2{
+    transform: translateY(600px) translateX(985px);
+    /*transform: translateX(800px);*/
+    /*transform: translateY(400px) translateX(795px);*/
+}
+.button2:active{
+    transform: translateY(604px) translateX(985px);
+    /*transform: translateY(400px) translateX(795px);*/
+}
+
+/*.anchor{
+    !*min-height: 36px;
+    height: 10vh;
+    margin: 0 auto;
+
+    min-width: 10px;!*960px;*!*!
+  !*  height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;*!
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}*/
+.buttonContainer{
+   /* height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;*/
+    transform: translateY(-40px);
+}
+
+=======
 @import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
 
 /*!*A&T image on background style*!
@@ -315,3 +568,4 @@ h1:hover:after {
 }
 
 */
+>>>>>>> 8998c9db649cf8733d3dd7f5d0ce57e220b8ff14
